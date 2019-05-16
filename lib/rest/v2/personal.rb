@@ -17,6 +17,22 @@ module Bitfinex
       authenticated_post("auth/r/stats/perf::1D/hist")
     end
 
+    # Get the trade history
+    #
+    # @example:
+    #   client.trade_history
+    def trade_history(params ={})
+      authenticated_post("auth/r/trades/hist", params: params).body
+    end
+
+    # Get the movement history
+    #
+    # @example:
+    #   client.movement_history
+    def movement_history(params ={})
+      authenticated_post("auth/r/movements/hist", params: params).body
+    end
+        
     # Get the list of alerts
     #
     # @example:
